@@ -10,16 +10,19 @@ namespace RPSLS
     {
         //Member Variabes (HAS A)
         public string name;
-        public List<string> gestures;
-        public string chosenGesture;
+        public List<Gesture> gestures;
+        public Gesture chosenGesture;
         public int score;
 
         //Constructor
         public Player(string name)
         {
             this.name = name;
-            gestures = new List<string> {"rock", "paper", "scissors", "lizard", "Spock" };
-            chosenGesture = "";
+            gestures.Add(new Rock());
+            gestures.Add(new Paper());
+            gestures.Add(new Scissors());
+            gestures.Add(new Lizard());
+            gestures.Add(new Spoke());
             score = 0;
         }
 
