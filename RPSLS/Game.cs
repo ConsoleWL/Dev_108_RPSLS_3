@@ -11,6 +11,7 @@ namespace RPSLS
         //Member Variabes (HAS A)
         public Player playerOne;
         public Player playerTwo;
+        int numberOfHumanPlayers;
 
         //Constructor
         public Game()
@@ -103,7 +104,6 @@ namespace RPSLS
                 }
                 Console.WriteLine("________________________________________________");
             }
-            
         }
 
         public void DisplayGameWinner()
@@ -121,6 +121,10 @@ namespace RPSLS
         public void RunGame()
         {
             WelcomeMessage();
+            numberOfHumanPlayers = ChooseNumberOfHumanPlayers();
+            CreatePlayerObjects(numberOfHumanPlayers);
+            CompareGestures();
+            DisplayGameWinner();
         }
     }
 }
