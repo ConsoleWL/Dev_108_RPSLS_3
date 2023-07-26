@@ -80,7 +80,30 @@ namespace RPSLS
 
         public void CompareGestures()
         {
+            while(playerOne.score < 2 && playerTwo.score < 2)
+            {
+                playerOne.ChooseGesture();
+                playerTwo.ChooseGesture();
+                Console.WriteLine();
 
+                if (playerOne.chosenGesture.WillWLT(playerTwo.chosenGesture) == 1)
+                {
+                    playerOne.score++;
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                if (playerOne.chosenGesture.WillWLT(playerTwo.chosenGesture) == -1)
+                {
+                    playerTwo.score++;
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                else
+                {
+                    Console.WriteLine("Tied, Try again");
+                    Console.WriteLine($"{playerOne.name} score {playerOne.score} | {playerTwo.name} score {playerTwo.score} ");
+                }
+                Console.WriteLine("________________________________________________");
+            }
+            
         }
 
         public void DisplayGameWinner()
