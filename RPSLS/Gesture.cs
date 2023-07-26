@@ -10,6 +10,7 @@ namespace RPSLS
     {
         public string name;
 
-        public abstract int WillBeat(Gesture gesture);
+        //will return value: win 1, loss 2, tie 0
+        public abstract int WillWLT(Gesture gesture);
     }
 }

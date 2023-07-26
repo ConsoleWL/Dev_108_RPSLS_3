@@ -12,9 +12,26 @@ namespace RPSLS
         {
             name = "spoke";
         }
-        public override int WillBeat(Gesture gesture)
+        public override int WillWLT(Gesture gesture)
         {
-            throw new NotImplementedException();
+            // -1 lost
+            //  0 tie
+            //  1 win
+
+            if (gesture.name == "scissors" || gesture.name == "rock")
+            {
+                // win
+                return 1;
+            }
+            else if (gesture.name == "paper" || gesture.name == "lizard")
+            {
+                // loss
+                return -1;
+            }
+            else
+            {   // tie
+                return 0;
+            }
         }
     }
 }
