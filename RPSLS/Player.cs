@@ -10,7 +10,7 @@ namespace RPSLS
     {
         //Member Variabes (HAS A)
         public string name;
-        public List<Gesture> gestures;
+        public List<Gesture> gestures = new List<Gesture>();
         public Gesture chosenGesture;
         public int score;
 
