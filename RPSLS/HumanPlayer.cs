@@ -25,9 +25,10 @@ namespace RPSLS
                 }
 
                 string tempGesture = Console.ReadLine();
-                int intTempGesture = int.Parse(tempGesture) - 1;
+                int.TryParse(tempGesture, out int intTempGesture);
+                --intTempGesture;
 
-                if (intTempGesture >= 0)
+                if (intTempGesture >= 0 && intTempGesture)
                 {
                     chosenGesture = gestures[intTempGesture];
                     Console.WriteLine($"{name} chooses {chosenGesture.name}");
